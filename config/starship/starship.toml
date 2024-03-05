@@ -1,0 +1,80 @@
+
+[aws]
+disabled = true
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[character]
+success_symbol = "[>](green)"
+error_symbol = "[>](red)"
+vimcmd_symbol = "[<](green)"
+vimcmd_replace_one_symbol = "[<](purple)"
+vimcmd_replace_symbol = "[<](purple)"
+vimcmd_visual_symbol = "[<](orange)"
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+disabled = true
+
+[hostname]
+ssh_symbol = "⛺︎ "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
+
+[rust]
+symbol = " "
