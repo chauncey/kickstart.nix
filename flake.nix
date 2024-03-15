@@ -14,14 +14,22 @@
     darwin,
     home-manager,
     nixpkgs,
+    flake-parts,
     ...
   }: let
     username = "cc";
     darwin-system = import ./system/darwin.nix {inherit inputs username;};
-  in {
-    darwinConfigurations = {
-      aarch64 = darwin-system "aarch64-darwin";
-      x86_64 = darwin-system "x86_64-darwin";
+  in
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      flake = {
+        darwinConfigurations = {
+          aarch64 = darwin-system "aarch64-darwin";
+          x86_64 = darwin-system "x86_64-darwin";
+        };
+
+        lib = import ./lib {inherit inputs;};
+      };
+
+      systems = ["aarch64-darwin" "x86_64-darwin"];
     };
-  };
 }
