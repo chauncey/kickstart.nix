@@ -80,6 +80,21 @@
   };
 
   programs.zsh = {
-    oh-my-zsh.enable = true;
+    enable = true;
+    enableCompletion = true;
+    oh-my-zsh = {
+      enable = true;
+      plugins = ["git" "z"];
+    };
+    shellAliases = {
+      "dwc" = ''darwin-rebuild check --flake ".#aarch64"'';
+      "dws" = ''darwin-rebuild check --flake ".#aarch64"'';
+      "z" = "zoxide";
+    };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }
