@@ -82,6 +82,9 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    history = {
+      extended = true;
+    };
     oh-my-zsh = {
       enable = true;
       plugins = ["git" "z"];
@@ -89,6 +92,7 @@
     shellAliases = {
       "dwc" = ''darwin-rebuild check --flake ".#aarch64"'';
       "dws" = ''darwin-rebuild check --flake ".#aarch64"'';
+      "vi" = "nvim";
       "z" = "zoxide";
     };
   };
@@ -97,4 +101,5 @@
     enable = true;
     enableZshIntegration = true;
   };
+
 }
