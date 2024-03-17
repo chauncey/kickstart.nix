@@ -1,7 +1,13 @@
-{pkgs, ...}: {
-  # add home-manager user settings here
-  # tmux, git, wezterm, fzf
-  home.packages = with pkgs; [git neovim];
+{pkgs, config, ...}:
+
+let
+  userVimPlugin = pkgs.vimUtils.buildVimPlugin {
+    name = "user";
+    src = ../config/nvim;
+  };
+in
+{
+  home.packages = with pkgs; [git];
   home.stateVersion = "23.11";
 
   programs.tmux = {
@@ -102,4 +108,13 @@
     enableZshIntegration = true;
   };
 
+  programs.neovim = {
+    enable = true;
+    plugins = with pkgs; [
+      userVimPlugin
+    ];
+    extraLuaConfig = ''
+     require(`user`)
+    '';
+  };
 }
