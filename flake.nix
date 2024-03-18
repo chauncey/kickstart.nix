@@ -1,45 +1,46 @@
 {
-  description = "Example kickstart Home Manager environment.";
+  description = "Kickstart Nix environment.";
 
   inputs = {
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
+    darwin.url = "github:lnl7/nix-darwin";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
   outputs = inputs @ {
     self,
-    flake-parts,
+    darwin,
     home-manager,
     nixpkgs,
+    flake-parts,
     ...
-  }:
+  }: let
+    username = "cc";
+    darwin-system = import ./system/darwin.nix {inherit inputs username;};
+  in
     flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
-      perSystem = {
-        config,
-        self',
-        inputs',
-        pkgs,
-        system,
-        ...
-      }: {};
       flake = {
-        homeConfigurations = let
-          homeManagerModule = import ./module/home-manager.nix {
-            homeDirectory = "/home/cc";
-            username = "cc";
+        darwinConfigurations = {
+          aarch64 = darwin-system "aarch64-darwin";
+          x86_64 = darwin-system "x86_64-darwin";
+	      };
+
+        lib = import ./lib {inherit inputs;};
+      };
+
+      systems = ["aarch64-darwin" "x86_64-darwin"];
+
+      perSystem = { pkgs, ... }: {
+        formatter = pkgs.alejandra;
+
+      	packages = {
+          catppuccin-tmux = self.lib.catppuccin-tmux {
+            inherit (pkgs.tmuxPlugins) mkTmuxPlugin;
+            inherit (pkgs) fetchFromGiHub;
           };
-          homeManager = system:
-            home-manager.lib.homeManagerConfiguration {
-              modules = [homeManagerModule];
-              pkgs = nixpkgs.legacyPackages.${system};
-            };
-        in {
-          aarch64-darwin = homeManager "aarch64-darwin";
-          aarch64-linux = homeManager "aarch64-linux";
-          x86_64-darwin = homeManager "x86_64-darwin";
-          x86_64-linux = homeManager "x86_64-linux";
         };
       };
     };

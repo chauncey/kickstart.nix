@@ -1,0 +1,29 @@
+#title = "👻"
+
+theme = catppuccin-macchiato
+
+# font-family =
+font-family = Monofur Nerd Font Mono
+# font-family = Fairfax Hax HD
+#font-family = JetBrainsMono Nerd Font Mono
+
+# Font size
+font-size = 14
+
+clipboard-read = allow
+copy-on-select = clipboard
+
+background-opacity = 0.82
+unfocused-split-opacity = 0.82
+
+gtk-adwaita = false
+gtk-titlebar = false
+
+window-new-tab-position = end
+macos-titlebar-style = tabs
+
+quit-after-last-window-closed = true
+
+keybind = f4=new_tab
+keybind = f3=next_tab
+
