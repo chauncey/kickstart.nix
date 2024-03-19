@@ -1,14 +1,16 @@
-{pkgs, config, ...}:
-
-let
-  userVimPlugin = pkgs.vimUtils.buildVimPlugin {
-    name = "user";
-    src = ../config/nvim;
-  };
-in
 {
+  pkgs,
+  config,
+  ...
+}: {
   home.packages = with pkgs; [git];
   home.stateVersion = "23.11";
+
+  programs.wezterm = {
+    enable = true;
+    enableZshIntegration = true;
+    extraConfig = builtins.readFile ../config/wezterm/wezterm.lua;
+  };
 
   programs.tmux = {
     enable = true;
@@ -97,7 +99,7 @@ in
     };
     shellAliases = {
       "dwc" = ''darwin-rebuild check --flake ".#aarch64"'';
-      "dws" = ''darwin-rebuild check --flake ".#aarch64"'';
+      "dws" = ''darwin-rebuild switch --flake ".#aarch64"'';
       "vi" = "nvim";
       "z" = "zoxide";
     };
@@ -110,11 +112,14 @@ in
 
   programs.neovim = {
     enable = true;
-    plugins = with pkgs; [
-      userVimPlugin
-    ];
-    extraLuaConfig = ''
-     require(`user`)
+    defaultEditor = true;
+    extraConfig = ''
+      require('user')
     '';
+    extraPackages = [
+      pkgs.cmake
+      pkgs.cargo
+    ];
+    withPython3 = true;
   };
 }
