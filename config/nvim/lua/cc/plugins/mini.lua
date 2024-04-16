@@ -7,5 +7,6 @@ return {
       set_vim_settings = false,
     })
     require('mini.surround').setup()
+    require('mini.comment').setup()
   end,
 }

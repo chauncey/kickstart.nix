@@ -3,8 +3,8 @@
 theme = catppuccin-macchiato
 
 # font-family =
-# font-family = Monofur Nerd Font Mono
-font-family = Fairfax Hax HD
+font-family = Monofur Nerd Font Mono
+#font-family = Fairfax Hax HD
 
 # Font size
 font-size = 13

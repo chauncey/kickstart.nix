@@ -69,6 +69,9 @@
       golang = {
         symbol = " ";
       };
+      hostname = {
+        ssh_symbol = "⛺️ ";
+      };
       lua = {
         symbol = " ";
       };
