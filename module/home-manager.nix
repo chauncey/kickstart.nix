@@ -113,6 +113,7 @@
       pkgs.cargo
     ];
     withPython3 = true;
+    withNodeJs = true;
   };
 
   programs.zoxide = {
