@@ -1,5 +1,5 @@
 {
-  description = "Example kickstart Home Manager environment.";
+  description = "cc's development nix";
 
   inputs = {
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
