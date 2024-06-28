@@ -50,7 +50,6 @@
       character = {
         success_symbol = "[>](bold green)";
         error_symbol = "[>](bold red)";
-        ssh_symbol = "⛺︎ "
       };
       directory = {
         truncate_to_repo = false;
