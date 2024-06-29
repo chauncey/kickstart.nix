@@ -15,7 +15,7 @@ end
 -- For example, changing the color scheme:
 config.color_scheme = 'Catppuccin Mocha'
 config.hide_tab_bar_if_only_one_tab = true
-config.font_size = 14.0
+config.font_size = 15.0
 
 config.font = wezterm.font_with_fallback {
   --'Fairfax Hax HD',
@@ -49,9 +49,9 @@ config.keys = {
   }
 }
 
-config.window_close_confirmation = {
-  "NeverPrompt",
-}
+-- config.window_close_confirmation = {
+--  "NeverPrompt",
+--}
 
 
 -- and finally, return the configuration to wezterm

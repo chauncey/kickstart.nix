@@ -165,6 +165,17 @@
     };
   };
 
+  programs.tmux = {
+    enable = true;
+    terminal = "xterm-256color";
+  };
+
+  programs.wezterm = {
+    enable = true;
+    enableZshIntegration = true;
+    extraConfig = builtins.readFile ../config/wezterm/wezterm.lua;
+  };
+
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -188,12 +199,6 @@
       plugins = ["git" "z"];
       theme = "robbyrussell";
     };
-  };
-
-  programs.wezterm = {
-    enable = true;
-    enableZshIntegration = true;
-    extraConfig = builtins.readFile ../config/wezterm/wezterm.lua;
   };
 
 }

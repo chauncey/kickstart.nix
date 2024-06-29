@@ -37,6 +37,7 @@ alias startx='ssh-agent startx'
 alias swap='setxkbmap -option caps:swapescape'
 alias aur='auracle download'
 alias cat='bat'
+alias tm=$HOME/bin/tm
 
 alias dcb='docker-compose up --build'
 alias dcr='docker-compose run'
@@ -44,6 +45,6 @@ alias dce='docker-compose exec'
 alias dcl='docker-compose logs'
 alias dcs='docker-compose stop'
 alias dcbd='docker-compose up -d --build'
-      
+
 alias dwc='darwin-rebuild check --flake ".#aarch64"';
 alias dwb='darwin-rebuild switch --flake ".#aarch64"';
