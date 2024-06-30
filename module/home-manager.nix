@@ -8,6 +8,13 @@
   home.packages = with pkgs; [git];
   home.stateVersion = "23.11";
 
+  home.file = {
+    ".config/nvim" = {
+      source = ../config/nvim;
+      recursive = true;
+    };
+  };
+
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
@@ -85,17 +92,7 @@
   };
 
   xdg.configFile = {
-    ghostty = {
-      source = config.lib.file.mkOutOfStoreSymlink ../config/ghostty;
-      recursive = true;
-    };
-  };
-
-  xdg.configFile = {
-    nvim = {
-      source = config.lib.file.mkOutOfStoreSymlink ../config/nvim;
-      recursive = true;
-    };
+    "ghostty/config".text = builtins.readFile  ../config/ghostty/config;
   };
 
   programs.neovim = {
