@@ -1,6 +1,5 @@
 vim.g.mapleader = ","
 
-
 require("user.lazy");
 require("user.set");
 require("user.remap");
