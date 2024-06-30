@@ -1,5 +1,7 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") 
+local nnoremap = require("user.keymap_utils").nnoremap
+
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", "<-2<CR>gv=gv")
 
 vim.keymap.set("n", "J", "mzJ`z")
@@ -44,3 +46,49 @@ vim.keymap.set('n', '<leader>ps', function()
 end)
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 
+local harpoon_ui = require("harpoon.ui")
+local harpoon_mark = require("harpoon.mark")
+
+vim.keymap.set('n', '<leader>hh', harpoon_ui.toggle_quick_menu, {})
+
+-- Harpoon keybinds --
+-- Open harpoon ui
+nnoremap("<leader>hh", function()
+	harpoon_ui.toggle_quick_menu()
+end)
+
+-- Add current file to harpoon
+nnoremap("<leader>ha", function()
+	harpoon_mark.add_file()
+end)
+
+-- Remove current file from harpoon
+nnoremap("<leader>hr", function()
+	harpoon_mark.rm_file()
+end)
+
+-- Remove all files from harpoon
+nnoremap("<leader>hc", function()
+	harpoon_mark.clear_all()
+end)
+
+-- Quickly jump to harpooned files
+nnoremap("<leader>1", function()
+	harpoon_ui.nav_file(1)
+end)
+
+nnoremap("<leader>2", function()
+	harpoon_ui.nav_file(2)
+end)
+
+nnoremap("<leader>3", function()
+	harpoon_ui.nav_file(3)
+end)
+
+nnoremap("<leader>4", function()
+	harpoon_ui.nav_file(4)
+end)
+
+nnoremap("<leader>5", function()
+	harpoon_ui.nav_file(5)
+end)

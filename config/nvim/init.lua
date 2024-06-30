@@ -1,8 +1,8 @@
 vim.g.mapleader = ","
 
 
-require("cc.lazy");
-require("cc.set");
-require("cc.remap");
+require("user.lazy");
+require("user.set");
+require("user.remap");
 
 -- vim: set ts=2 sw=2 et:

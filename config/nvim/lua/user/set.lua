@@ -1,3 +1,5 @@
+vim.g.mapleader = ","
+
 local function on_buf_write_pre()
   local file_name = vim.fn.expand("%:t")
   local file_extension = vim.fn.expand("%:e")
@@ -38,7 +40,7 @@ vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
 
-vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
@@ -47,6 +49,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 vim.opt.foldcolumn = "0"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
