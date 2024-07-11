@@ -19,7 +19,7 @@ gtk-adwaita = false
 gtk-titlebar = false
 
 window-new-tab-position = end
-macos-titlebar-tabs = true
+#macos-titlebar-tabs = true
 
 quit-after-last-window-closed = true
 
