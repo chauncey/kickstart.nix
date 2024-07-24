@@ -3,16 +3,18 @@
 theme = catppuccin-macchiato
 
 # font-family =
-font-family = Monofur Nerd Font Mono
-#font-family = Fairfax Hax HD
+#font-family = Monofur Nerd Font Mono
+#font-size = 13
+font-family = Fairfax Hax HD
+font-size = 14
 
-# Font size
-font-size = 13
 
 clipboard-read = allow
-copy-on-select = clipboard
+#copy-on-select = clipboard
+copy-on-select = true
 
-background-opacity = 0.92
+background = #110f18
+background-opacity = 0.80
 unfocused-split-opacity = 0.92
 
 gtk-adwaita = false
@@ -25,4 +27,3 @@ quit-after-last-window-closed = true
 
 keybind = f4=new_tab
 keybind = f3=next_tab
-
