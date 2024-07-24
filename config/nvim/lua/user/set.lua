@@ -1,5 +1,3 @@
-vim.g.mapleader = ","
-
 local function on_buf_write_pre()
   local file_name = vim.fn.expand("%:t")
   local file_extension = vim.fn.expand("%:e")

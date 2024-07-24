@@ -32,7 +32,7 @@ config.font = wezterm.font_with_fallback {
 
 config.warn_about_missing_glyphs = true
 
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.82
 
 config.enable_tab_bar = false
 
