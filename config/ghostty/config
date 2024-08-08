@@ -14,6 +14,7 @@ font-size = 17
 clipboard-read = allow
 copy-on-select = clipboard
 
+background = #110f18
 background-opacity = 0.82
 unfocused-split-opacity = 0.82
 
