@@ -193,6 +193,7 @@
       "dwc" = ''darwin-rebuild check --flake ".#aarch64"'';
       "dwb" = ''darwin-rebuild switch --flake ".#aarch64"'';
       "ks" = "tmux kill-server";
+      "pyenv" = "source .venv/bin/activate";
     };
     oh-my-zsh = {
       enable = true;
