@@ -171,7 +171,7 @@
       -- For example, changing the color scheme:
       config.color_scheme = 'Catppuccin Mocha'
       config.hide_tab_bar_if_only_one_tab = true
-      config.font_size = 16.0
+      config.font_size = 20.0
 
       config.font = wezterm.font_with_fallback {
         'Fairfax Hax HD',

@@ -6,7 +6,7 @@ theme = catppuccin-macchiato
 #font-family = Monofur Nerd Font Mono
 #font-size = 13
 font-family = Fairfax Hax HD
-font-size = 18
+font-size = 16
 
 
 clipboard-read = allow
