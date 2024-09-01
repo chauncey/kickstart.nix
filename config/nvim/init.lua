@@ -1,5 +1,6 @@
 vim.g.mapleader = ","
 
+vim.g.lazy_lock_file = "~/.cache/nvim/lazy.lock.json"
 
 require("cc.lazy");
 require("cc.set");
