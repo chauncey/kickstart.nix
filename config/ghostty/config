@@ -23,6 +23,7 @@ gtk-titlebar = false
 
 window-new-tab-position = end
 #macos-titlebar-tabs = true
+window-padding-color = background
 
 quit-after-last-window-closed = true
 
