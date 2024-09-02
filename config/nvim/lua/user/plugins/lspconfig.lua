@@ -25,7 +25,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "rust_analyzer" }
+        ensure_installed = { "lua_ls", "rust_analyzer", "gleam" }
       })
     end
   },
@@ -38,6 +38,7 @@ return {
     },
     config = function()
       local lspconfig = require("lspconfig")
+      lspconfig.gleam.setup({})
       lspconfig.lua_ls.setup({})
 
       vim.keymap.set('n', 'K', vim.lsp.buf.hover)
