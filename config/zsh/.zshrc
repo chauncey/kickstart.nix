@@ -4,6 +4,7 @@ export ZSH=$HOME/.config/zsh
 
 export GOPATH=$PROJECTS/go
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/man$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH=$PATH:/Users/cc/.cache/rebar3/bin
 
 if [[ -a ~/.localrc ]]
 then
