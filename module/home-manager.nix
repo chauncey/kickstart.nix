@@ -2,18 +2,10 @@
   homeDirectory,
   username,
 }: {pkgs, config, ...}: {
-  # add home-manager user settings here
   home.homeDirectory = homeDirectory;
   home.username = username;
   home.packages = with pkgs; [git];
   home.stateVersion = "23.11";
-
-  home.file = {
-    ".config/nvim" = {
-      source = ../config/nvim;
-      recursive = true;
-    };
-  };
 
   programs.direnv = {
     enable = true;
@@ -95,12 +87,16 @@
     "ghostty/config".text = builtins.readFile  ../config/ghostty/config;
   };
 
+  xdg.configFile = {
+    nvim = {
+      source = config.lib.file.mkOutOfStoreSymlink /home/cc/Code/kickstart.nix/config/nvim;
+      recursive = true;
+    };
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    extraConfig = ''
-      require('user')
-    '';
     extraPackages = [
       pkgs.cmake
       pkgs.cargo
