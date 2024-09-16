@@ -8,11 +8,17 @@
 --   end,
 -- }
 return {
-  "folke/tokyonight.nvim",
+  "catppuccin/nvim",
 	lazy = false,
   priority = 1000,
-	config = function()
-		vim.cmd.colorscheme 'tokyonight'
-		vim.cmd.hi 'Normal guibg=NONE ctermbg=NONE'
-	end,
+  flavour = "macchiato",
+  integrations = {
+    cmp = true,
+    gitsigns = true,
+    treesitter = true,
+    mini = {
+      enabled = true,
+      indentscope_color = true,
+    },
+  },
 }
