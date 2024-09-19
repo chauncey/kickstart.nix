@@ -7,6 +7,8 @@ theme = catppuccin-macchiato
 #font-size = 13
 font-family = Fairfax Hax HD
 font-size = 16
+# font-family = Hasklug Nerd Font Med
+# font-size = 16
 
 
 clipboard-read = allow
