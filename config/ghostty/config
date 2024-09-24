@@ -17,6 +17,7 @@ copy-on-select = clipboard
 background = #110f18
 background-opacity = 0.82
 unfocused-split-opacity = 0.82
+window-padding-color = background
 
 gtk-adwaita = false
 gtk-titlebar = false
