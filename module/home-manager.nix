@@ -83,27 +83,58 @@
     };
   };
 
-  xdg.configFile = {
-    "ghostty/config".text = builtins.readFile  ../config/ghostty/config;
-  };
+  # xdg.configFile = {
+  #   "ghostty/config".text = builtins.readFile  ../config/ghostty/config;
+  # };
+  xdg.configFile."ghostty/config".text = ''
+    theme = catppuccin-macchiato
 
-  xdg.configFile = {
-    nvim = {
-      source = config.lib.file.mkOutOfStoreSymlink /home/cc/Code/kickstart.nix/config/nvim;
-      recursive = true;
-    };
-  };
+    font-family = Monofur Nerd Font Mono
+    font-size = 14
+    #font-family = Fairfax Hax HD
+    #font-size = 8
+    # font-family = Hasklug Nerd Font Med
+    # font-size = 16
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    extraPackages = [
-      pkgs.cmake
-      pkgs.cargo
-    ];
-    withPython3 = true;
-  };
 
+    clipboard-read = allow
+    #copy-on-select = clipboard
+    copy-on-select = true
+
+    #background = #110f18
+    background = #110f18
+    background-opacity = 0.80
+    unfocused-split-opacity = 0.92
+
+    gtk-adwaita = false
+    gtk-titlebar = false
+
+    window-new-tab-position = end
+    window-padding-color = background
+
+    quit-after-last-window-closed = true
+
+    keybind = f4=new_tab
+    keybind = f3=next_tab
+  '';
+
+  # xdg.configFile = {
+  #   nvim = {
+  #     source = config.lib.file.mkOutOfStoreSymlink /home/cc/Code/kickstart.nix/config/nvim;
+  #     recursive = true;
+  #   };
+  # };
+  #
+  # programs.neovim = {
+  #   enable = true;
+  #   defaultEditor = true;
+  #   extraPackages = [
+  #     pkgs.cmake
+  #     pkgs.cargo
+  #   ];
+  #   withPython3 = true;
+  # };
+  #
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;

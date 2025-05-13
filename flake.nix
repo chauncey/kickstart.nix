@@ -27,8 +27,8 @@
       flake = {
         homeConfigurations = let
           homeManagerModule = import ./module/home-manager.nix {
-            homeDirectory = "/home/cc";
-            username = "cc";
+            homeDirectory = "/home/chris";
+            username = "chris";
           };
           homeManager = system:
             home-manager.lib.homeManagerConfiguration {
