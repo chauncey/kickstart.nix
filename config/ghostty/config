@@ -3,10 +3,10 @@
 theme = catppuccin-macchiato
 
 # font-family =
-# font-family = Monofur Nerd Font Mono
+font-family = Monofur Nerd Font Mono
+font-size = 16
+# font-family = Fairfax Hax HD
 # font-size = 16
-font-family = Fairfax Hax HD
-font-size = 14
 # font-family = Hasklug Nerd Font Med
 # font-size = 16
 
@@ -20,7 +20,6 @@ background = #110f18
 background-opacity = 0.80
 unfocused-split-opacity = 0.92
 
-gtk-adwaita = false
 gtk-titlebar = false
 
 window-new-tab-position = end

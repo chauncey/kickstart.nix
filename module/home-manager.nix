@@ -87,7 +87,7 @@
   #   "ghostty/config".text = builtins.readFile  ../config/ghostty/config;
   # };
   xdg.configFile."ghostty/config".text = ''
-    theme = catppuccin-macchiato
+    theme = Catppuccin Macchiato
 
     font-family = Monofur Nerd Font Mono
     font-size = 14
@@ -106,7 +106,6 @@
     background-opacity = 0.80
     unfocused-split-opacity = 0.92
 
-    gtk-adwaita = false
     gtk-titlebar = false
 
     window-new-tab-position = end
